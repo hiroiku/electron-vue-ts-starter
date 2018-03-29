@@ -11,17 +11,14 @@ export default class VueComponent extends Vue {
 
 <!-- template -->
 <template>
-    <div>
-        <p>Hello, world</p>
-        <ul>
-            <li>
-                <router-link :to="{ name: 'index' }">Index</router-link>
-            </li>
-            <li>
-                <router-link :to="{ name: 'config' }">Config</router-link>
-            </li>
-        </ul>
-    </div>
+    <ul>
+        <li>
+            <router-link :to="{ name: 'index' }">Index</router-link>
+        </li>
+        <li>
+            <router-link :to="{ name: 'config' }">Config</router-link>
+        </li>
+    </ul>
 </template>
 
 <!-- style -->

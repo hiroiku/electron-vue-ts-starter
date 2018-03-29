@@ -4,8 +4,7 @@ import Vue from 'vue';
 import Component from 'vue-class-component';
 import Sample from '@/vue/components/Sample.vue';
 
-@Component<VueComponent>({
-})
+@Component<VueComponent>({})
 export default class VueComponent extends Vue { }
 </script>
 
@@ -13,3 +12,7 @@ export default class VueComponent extends Vue { }
 <template>
     <p>index</p>
 </template>
+
+<!-- style -->
+<style lang="scss">
+</style>

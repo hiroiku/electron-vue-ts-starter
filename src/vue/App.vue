@@ -15,6 +15,7 @@ export default class VueComponent extends Vue { }
 <!-- template -->
 <template>
     <div>
+        <p>Hello, world</p>
         <Nav />
         <router-view></router-view>
     </div>
@@ -22,23 +23,15 @@ export default class VueComponent extends Vue { }
 
 <!-- style -->
 <style lang="scss">
-body #wpwrap,
-body #wpcontent,
-body #wpbody,
-body #wpbody-content {
-    box-sizing: border-box;
-    height: 100%;
+body {
+    color: red;
 }
 
-body #wpcontent {
-    padding: 0;
-}
+.example {
+    display: grid;
+    background: linear-gradient(to bottom, white, black);
+    transition: all .5s;
 
-.wrap {
-    padding-left: 20px;
-}
-
-#wpfooter {
-    display: none;
+    user-select: none;
 }
 </style>

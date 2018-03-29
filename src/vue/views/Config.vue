@@ -11,3 +11,8 @@ export default class VueComponent extends Vue { }
 <template>
     <p>config</p>
 </template>
+
+<!-- style -->
+<style lang="scss">
+
+</style>
