@@ -4,6 +4,7 @@
     "version": "1.0.0",
     "author": "Hiroiku Inoue",
     "license": "MIT",
+    "main": "public/main.js",
     "scripts": {
         "start": "webpack-dev-server --mode development --progress --config ./webpack/development.js",
         "build": "webpack --mode production --progress --config ./webpack/production.js",
