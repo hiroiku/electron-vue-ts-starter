@@ -11,11 +11,33 @@ function resolve($) {
 
 rimraf(resolve('public'), error => {});
 
-module.exports = {
+module.exports = [{
+    target: 'electron-main',
     context: resolve('.'),
-    devtool: 'cheap-module-eval-source-map',
+    devtool: 'source-map',
     entry: {
-        app: resolve('src/ts/index.ts')
+        main: resolve('src/ts/main.ts')
+    },
+    output: {
+        path: resolve('public'),
+        filename: '[name].js'
+    },
+    module: {
+        rules: [{
+            test: /\.ts$/,
+            use: ['ts-loader']
+        }]
+    },
+    node: {
+        __dirname: false,
+        __filename: false
+    }
+}, {
+    target: 'electron-renderer',
+    context: resolve('.'),
+    devtool: 'source-map',
+    entry: {
+        renderer: resolve('src/ts/renderer.ts')
     },
     output: {
         path: resolve('public'),
@@ -128,4 +150,4 @@ module.exports = {
             }
         })
     ]
-};
+}];

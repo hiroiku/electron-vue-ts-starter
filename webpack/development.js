@@ -12,15 +12,36 @@ function resolve($) {
     return path.join(__dirname, '..', $);
 }
 
-module.exports = {
+module.exports = [{
+    target: 'electron-main',
     context: resolve('.'),
     devtool: 'cheap-module-eval-source-map',
     entry: {
-        app: resolve('src/ts/index.ts')
+        main: resolve('src/ts/main.ts')
     },
     output: {
         path: resolve('public'),
-        publicPath: '/',
+        filename: '[name].js'
+    },
+    module: {
+        rules: [{
+            test: /\.ts$/,
+            use: ['ts-loader']
+        }]
+    },
+    node: {
+        __dirname: false,
+        __filename: false
+    }
+}, {
+    // target: 'electron-renderer',
+    context: resolve('.'),
+    devtool: 'cheap-module-eval-source-map',
+    entry: {
+        renderer: resolve('src/ts/renderer.ts')
+    },
+    output: {
+        path: resolve('public'),
         filename: '[name].js'
     },
     resolve: {
@@ -139,4 +160,4 @@ module.exports = {
             poll: false,
         }
     }
-};
+}];
